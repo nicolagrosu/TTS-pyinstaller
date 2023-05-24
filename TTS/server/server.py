@@ -63,7 +63,7 @@ def create_argparser():
 # parse the args
 args = create_argparser().parse_args()
 
-path = Path(__file__).parent / "../.models.json"
+path = Path(__file__).parent / "TTS/.models.json"
 manager = ModelManager(path)
 
 if args.list_models:
@@ -125,7 +125,7 @@ language_manager = getattr(synthesizer.tts_model, "language_manager", None)
 
 # TODO: set this from SpeakerManager
 use_gst = synthesizer.tts_config.get("use_gst", False)
-app = Flask(__name__)
+app = Flask(__name__, template_folder='TTS/server/templates', static_folder='TTS/server/static')
 
 
 def style_wav_uri_to_dict(style_wav: str) -> Union[str, dict]:

@@ -1,3 +1,23 @@
+## Pyinstaller instructions
+
+- Create and activate virtual environment
+
+    ```bash
+    > python -m venv TTSenv
+
+    > TTSenv\Scripts\activate
+    ```
+- Install dependecies
+
+    ```bash
+    > pip install -e .
+    ```
+
+- Build executable
+
+    ```bash
+    > pyinstaller TTS/server/server.py --noconfirm --collect-all librosa --collect-all gruut --collect-all TTS --collect-all pycrfsuite --collect-all unidic_lite --collect-data trainer --collect-all jamo
+    ```
 
 
 ## 🐸Coqui.ai News
